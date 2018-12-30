@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".NavigationDrawerActivity"
+    tools:showIn="@layout/app_bar_navigation_drawer">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.card.MaterialCardView
+            android:id="@+id/card1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/card_spacing">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/card1_judul"
+                    style="@style/TextAppearance.AppCompat.Large"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/card_title_margin"
+                    android:layout_marginTop="@dimen/card_title_margin_top"
+                    android:layout_marginEnd="@dimen/card_title_margin"
+                    android:text="Tes Untuk Sendiri" />
+
+                <TextView
+                    android:id="@+id/card1_subjudul"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/card1_judul"
+                    android:layout_marginStart="@dimen/card_title_margin"
+                    android:layout_marginTop="@dimen/card_button_margin"
+                    android:layout_marginEnd="@dimen/card_title_margin"
+                    android:layout_marginBottom="@dimen/card_title_margin"
+                    android:text="Untuk mengetahui gaya belajar Anda" />
+
+                <android.support.design.button.MaterialButton
+                    android:id="@+id/card1_mulai"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/card1_subjudul"
+                    android:layout_margin="@dimen/card_button_margin"
+                    android:text="mulai"/>
+            </RelativeLayout>
+        </android.support.design.card.MaterialCardView>
+
+        <android.support.design.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/card_spacing"
+            android:layout_below="@id/card1">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/card2_judul"
+                    style="@style/TextAppearance.AppCompat.Large"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/card_title_margin"
+                    android:layout_marginTop="@dimen/card_title_margin_top"
+                    android:layout_marginEnd="@dimen/card_title_margin"
+                    android:text="Tes Untuk Anak Anda" />
+
+                <TextView
+                    android:id="@+id/card2_subjudul"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/card2_judul"
+                    android:layout_marginStart="@dimen/card_title_margin"
+                    android:layout_marginTop="@dimen/card_button_margin"
+                    android:layout_marginEnd="@dimen/card_title_margin"
+                    android:layout_marginBottom="@dimen/card_title_margin"
+                    android:text="Untuk mengetahui gaya belajar anak Anda" />
+
+                <android.support.design.button.MaterialButton
+                    android:id="@+id/card2_mulai"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/card2_subjudul"
+                    android:layout_margin="@dimen/card_button_margin"
+                    android:text="mulai"/>
+            </RelativeLayout>
+        </android.support.design.card.MaterialCardView>
+    </RelativeLayout>
+</ScrollView>

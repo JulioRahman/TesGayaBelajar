@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".tes.TesSendiriActivity">
+
+    <TextView
+        android:id="@+id/iSoal"
+        style="@style/TextAppearance.AppCompat.Large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin"
+        android:text="index soal"/>
+
+    <TextView
+        android:id="@+id/soal"
+        style="@style/TextAppearance.AppCompat.Medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/text_margin"
+        android:layout_marginRight="@dimen/text_margin"
+        android:layout_marginBottom="@dimen/text_margin"
+        android:text="Waktu yang kamu butuhkan untuk mengerjakan tugas cukup lama, karena kamu harus berjalan ke sana kemari, beristirahat sebentar, atau mengerjakan hal lain, untuk mendapatkan ide lebih lanjut"
+        android:justificationMode="inter_word"
+        android:layout_below="@id/iSoal"/>
+
+    <android.support.design.button.MaterialButton
+        android:id="@+id/jaw1"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/text_margin"
+        android:layout_marginLeft="@dimen/text_margin"
+        android:layout_marginRight="@dimen/text_margin"
+        android:text="jawaban 1"
+        android:textAlignment="textStart"
+        android:layout_below="@id/soal"/>
+
+    <android.support.design.button.MaterialButton
+        android:id="@+id/jaw2"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/text_margin"
+        android:layout_marginLeft="@dimen/text_margin"
+        android:layout_marginRight="@dimen/text_margin"
+        android:text="jawaban 2"
+        android:textAlignment="textStart"
+        android:layout_below="@id/jaw1"/>
+
+    <android.support.design.button.MaterialButton
+        android:id="@+id/jaw3"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/text_margin"
+        android:layout_marginLeft="@dimen/text_margin"
+        android:layout_marginRight="@dimen/text_margin"
+        android:text="jawaban 3"
+        android:textAlignment="textStart"
+        android:layout_below="@id/jaw2"/>
+
+    <android.support.design.button.MaterialButton
+        android:id="@+id/bPrev"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:text="sebelumnya"/>
+
+    <android.support.design.button.MaterialButton
+        android:id="@+id/bNext"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:text="selanjutnya"/>
+
+    <EditText
+        android:id="@+id/edListener"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:enabled="false" />
+
+</RelativeLayout>

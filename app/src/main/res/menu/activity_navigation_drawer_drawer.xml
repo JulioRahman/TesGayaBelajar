@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_mulai"
+            android:icon="@drawable/ic_menu_mulai"
+            android:title="Mulai Tes!"
+            android:checked="true"/>
+    </group>
+
+    <item android:title="Gaya Belajar">
+        <menu>
+            <item
+                android:id="@+id/nav_visual"
+                android:icon="@drawable/ic_menu_visual"
+                android:title="Visual" />
+            <item
+                android:id="@+id/nav_auditori"
+                android:icon="@drawable/ic_menu_audiotori"
+                android:title="Auditori" />
+            <item
+                android:id="@+id/nav_kinestetik"
+                android:icon="@drawable/ic_menu_kinestetik"
+                android:title="Kinestetik" />
+        </menu>
+    </item>
+
+
+
+</menu>
