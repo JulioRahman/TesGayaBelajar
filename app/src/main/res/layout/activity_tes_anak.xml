@@ -7,31 +7,85 @@
     tools:context=".tes.TesAnakActivity">
 
     <TextView
-        android:id="@+id/iSoal"
+        android:id="@+id/iSoalb"
+        style="@style/TextAppearance.AppCompat.Large"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/text_margin"
-        style="@style/TextAppearance.AppCompat.Large"
         android:text="index soal"
-        android:textColor="#000"/>
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"/>
 
     <TextView
-        android:id="@+id/soal"
+        android:id="@+id/soalb"
+        style="@style/TextAppearance.AppCompat.Medium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/text_margin"
         android:layout_marginRight="@dimen/text_margin"
         android:layout_marginBottom="@dimen/text_margin"
-        style="@style/TextAppearance.AppCompat.Medium"
-        android:text="soal bla bla bal"
-        android:textColor="#000"
-        android:layout_below="@+id/iSoal"/>
+        android:text="soal"
+        android:justificationMode="inter_word"
+        android:layout_below="@id/iSoalb"/>
 
-    <Button
+    <android.support.design.button.MaterialButton
+        android:id="@+id/jaw1b"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/text_margin"
+        android:layout_marginLeft="@dimen/text_margin"
+        android:layout_marginRight="@dimen/text_margin"
+        android:text="jarang sekali"
+        android:textAlignment="textStart"
+        android:layout_below="@id/soalb"/>
+
+    <android.support.design.button.MaterialButton
+        android:id="@+id/jaw2b"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/text_margin"
+        android:layout_marginRight="@dimen/text_margin"
+        android:text="kadang-kadang"
+        android:textAlignment="textStart"
+        android:layout_below="@id/jaw1b"/>
+
+    <android.support.design.button.MaterialButton
+        android:id="@+id/jaw3b"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/text_margin"
+        android:layout_marginRight="@dimen/text_margin"
+        android:text="hampir selalu"
+        android:textAlignment="textStart"
+        android:layout_below="@id/jaw2b"/>
+
+    <android.support.design.button.MaterialButton
+        android:id="@+id/bPrevb"
+        style="@style/Widget.MaterialComponents.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/text_margin"
-        android:text="jawab1"
-        android:layout_below="@id/soal"/>
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:text="sebelumnya"/>
+
+    <android.support.design.button.MaterialButton
+        android:id="@+id/bNextb"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:text="selanjutnya"/>
+
+    <EditText
+        android:id="@+id/edListenerb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:enabled="false" />
 
 </RelativeLayout>

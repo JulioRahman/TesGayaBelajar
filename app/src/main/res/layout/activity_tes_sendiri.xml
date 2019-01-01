@@ -12,7 +12,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/text_margin"
-        android:text="index soal"/>
+        android:text="index soal"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/soal"
@@ -22,45 +24,41 @@
         android:layout_marginLeft="@dimen/text_margin"
         android:layout_marginRight="@dimen/text_margin"
         android:layout_marginBottom="@dimen/text_margin"
-        android:text="Waktu yang kamu butuhkan untuk mengerjakan tugas cukup lama, karena kamu harus berjalan ke sana kemari, beristirahat sebentar, atau mengerjakan hal lain, untuk mendapatkan ide lebih lanjut"
+        android:text="soal"
         android:justificationMode="inter_word"
         android:layout_below="@id/iSoal"/>
 
-    <android.support.design.button.MaterialButton
-        android:id="@+id/jaw1"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/text_margin"
-        android:layout_marginLeft="@dimen/text_margin"
-        android:layout_marginRight="@dimen/text_margin"
-        android:text="jawaban 1"
-        android:textAlignment="textStart"
-        android:layout_below="@id/soal"/>
+        android:orientation="vertical"
+        android:layout_margin="@dimen/text_margin"
+        android:layout_above="@id/bPrev">
 
-    <android.support.design.button.MaterialButton
-        android:id="@+id/jaw2"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/text_margin"
-        android:layout_marginLeft="@dimen/text_margin"
-        android:layout_marginRight="@dimen/text_margin"
-        android:text="jawaban 2"
-        android:textAlignment="textStart"
-        android:layout_below="@id/jaw1"/>
+        <android.support.design.button.MaterialButton
+            android:id="@+id/jaw1"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="jarang sekali"
+            android:textAlignment="textStart"/>
 
-    <android.support.design.button.MaterialButton
-        android:id="@+id/jaw3"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/text_margin"
-        android:layout_marginLeft="@dimen/text_margin"
-        android:layout_marginRight="@dimen/text_margin"
-        android:text="jawaban 3"
-        android:textAlignment="textStart"
-        android:layout_below="@id/jaw2"/>
+        <android.support.design.button.MaterialButton
+            android:id="@+id/jaw2"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="kadang-kadang"
+            android:textAlignment="textStart"/>
+
+        <android.support.design.button.MaterialButton
+            android:id="@+id/jaw3"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="hampir selalu"
+            android:textAlignment="textStart"/>
+    </LinearLayout>
 
     <android.support.design.button.MaterialButton
         android:id="@+id/bPrev"

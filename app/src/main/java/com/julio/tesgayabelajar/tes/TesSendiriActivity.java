@@ -1,5 +1,7 @@
 package com.julio.tesgayabelajar.tes;
 
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
@@ -30,8 +32,9 @@ public class TesSendiriActivity extends AppCompatActivity {
                      "Agar kamu dapat mengerti pelajaran, kamu suka menulis ulang atau mengetik catatan pelajaran kamu",
                      "Waktu yang kamu butuhkan untuk mengerjakan tugas cukup lama, karena kamu harus berjalan ke sana kemari, beristirahat sebentar, atau mengerjakan hal lain, untuk mendapatkan ide lebih lanjut",
                      "Biasanya kamu langsung mengerjakan sesuatu tanpa harus melihat instruksinya terlebih dahulu",
-                     "Kamu melihat sesuatu yang sudah jadi, kemudian kamu suka membuatnya sendiri",};
+                     "Kamu melihat sesuatu yang sudah jadi, kemudian kamu suka membuatnya sendiri"};
     int noSoal = 1;
+    int[] jaw = new int[15];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +54,8 @@ public class TesSendiriActivity extends AppCompatActivity {
 
         iSoal.setText("Soal " + noSoal);
         tvSoal.setText(soal[noSoal-1]);
+        bPrev.setVisibility(View.INVISIBLE);
+        bNext.setText("selanjutnya");
 
         edListener.addTextChangedListener(new TextWatcher() {
             @Override
@@ -61,8 +66,42 @@ public class TesSendiriActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                iSoal.setText("Soal " + noSoal);
-                tvSoal.setText(soal[noSoal-1]);
+                if (1 <= noSoal && noSoal <= 15) {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        jaw1.setBackgroundTintList(getResources().getColorStateList(R.color.colortransparent));
+                        jaw2.setBackgroundTintList(getResources().getColorStateList(R.color.colortransparent));
+                        jaw3.setBackgroundTintList(getResources().getColorStateList(R.color.colortransparent));
+                        jaw1.setTextColor(getResources().getColor(R.color.colorAccent));
+                        jaw2.setTextColor(getResources().getColor(R.color.colorAccent));
+                        jaw3.setTextColor(getResources().getColor(R.color.colorAccent));
+
+                        if (jaw[noSoal-1] == 1) {
+                            jaw1.setBackgroundTintList(getResources().getColorStateList(R.color.colorjaw));
+                            jaw1.setTextColor(getResources().getColor(R.color.colorPutih));
+                        } else if (jaw[noSoal-1] == 2) {
+                            jaw2.setBackgroundTintList(getResources().getColorStateList(R.color.colorjaw));
+                            jaw2.setTextColor(getResources().getColor(R.color.colorPutih));
+                        } else if (jaw[noSoal-1] == 3) {
+                            jaw3.setBackgroundTintList(getResources().getColorStateList(R.color.colorjaw));
+                            jaw3.setTextColor(getResources().getColor(R.color.colorPutih));
+                        }
+                    }
+
+                    if (noSoal == 1 && bPrev.getVisibility() == View.VISIBLE){
+                        bPrev.setVisibility(View.INVISIBLE);
+                    } else {
+                        bPrev.setVisibility(View.VISIBLE);
+                    }
+
+                    if (noSoal == 15 && bNext.getText().equals("selanjutnya")) {
+                        bNext.setText("selesai");
+                    } else {
+                        bNext.setText("selanjutnya");
+                    }
+
+                    iSoal.setText("Soal " + noSoal);
+                    tvSoal.setText(soal[noSoal - 1]);
+                }
             }
         });
 
@@ -74,6 +113,24 @@ public class TesSendiriActivity extends AppCompatActivity {
                     edListener.setText(String.valueOf(noSoal));
                     //iSoal.setText("Soal " + noSoal);
                     //tvSoal.setText(soal[noSoal - 1]);
+                } else if (noSoal == 15) {
+                    int vi = 0, au = 0, ki = 0;
+                    for (int i = 0; i < 15; i++) {
+                        if (i < 5) vi += jaw[i];
+                        else if (i < 10) au += jaw[i];
+                        else ki += jaw[i];
+                    }
+
+                    Intent intent = new Intent(TesSendiriActivity.this, HasilActivity.class);
+                    if (vi > au && vi > ki) intent.putExtra("hasil", "11");
+                    else if (au > vi && au > ki) intent.putExtra("hasil", "12");
+                    else if (ki > vi && ki > au) intent.putExtra("hasil", "13");
+                    else if (vi == au && vi != ki) intent.putExtra("hasil", "11");
+                    else if (au == ki && au != vi) intent.putExtra("hasil", "12");
+                    else if (ki == vi && ki != au) intent.putExtra("hasil", "13");
+                    else if (vi == au && vi == ki) intent.putExtra("hasil", "11");
+                    startActivity(intent);
+                    finish();
                 }
             }
         });
@@ -87,6 +144,51 @@ public class TesSendiriActivity extends AppCompatActivity {
                     //iSoal.setText("Soal " + noSoal);
                     //tvSoal.setText(soal[noSoal - 1]);
                 }
+            }
+        });
+
+        jaw1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    jaw1.setBackgroundTintList(getResources().getColorStateList(R.color.colorjaw));
+                    jaw2.setBackgroundTintList(getResources().getColorStateList(R.color.colortransparent));
+                    jaw3.setBackgroundTintList(getResources().getColorStateList(R.color.colortransparent));
+                    jaw1.setTextColor(getResources().getColor(R.color.colorPutih));
+                    jaw2.setTextColor(getResources().getColor(R.color.colorAccent));
+                    jaw3.setTextColor(getResources().getColor(R.color.colorAccent));
+                }
+                jaw[noSoal-1] = 1;
+            }
+        });
+
+        jaw2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    jaw1.setBackgroundTintList(getResources().getColorStateList(R.color.colortransparent));
+                    jaw2.setBackgroundTintList(getResources().getColorStateList(R.color.colorjaw));
+                    jaw3.setBackgroundTintList(getResources().getColorStateList(R.color.colortransparent));
+                    jaw1.setTextColor(getResources().getColor(R.color.colorAccent));
+                    jaw2.setTextColor(getResources().getColor(R.color.colorPutih));
+                    jaw3.setTextColor(getResources().getColor(R.color.colorAccent));
+                }
+                jaw[noSoal-1] = 2;
+            }
+        });
+
+        jaw3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    jaw1.setBackgroundTintList(getResources().getColorStateList(R.color.colortransparent));
+                    jaw2.setBackgroundTintList(getResources().getColorStateList(R.color.colortransparent));
+                    jaw3.setBackgroundTintList(getResources().getColorStateList(R.color.colorjaw));
+                    jaw1.setTextColor(getResources().getColor(R.color.colorAccent));
+                    jaw2.setTextColor(getResources().getColor(R.color.colorAccent));
+                    jaw3.setTextColor(getResources().getColor(R.color.colorPutih));
+                }
+                jaw[noSoal-1] = 3;
             }
         });
     }
