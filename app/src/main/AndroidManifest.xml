@@ -31,10 +31,10 @@
             android:name=".tes.TesAnakActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".tes.HasilActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".gayabelajar.VisualScrollingActivity"
             android:label="@string/title_activity_visual_scrolling"
@@ -47,6 +47,7 @@
             android:name=".gayabelajar.KinestetikScrollingActivity"
             android:label="@string/title_activity_kinestetik_scrolling"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".TentangActivity"></activity>
     </application>
 
 </manifest>

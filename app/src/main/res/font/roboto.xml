@@ -3,10 +3,10 @@
     <font
         android:fontStyle="normal"
         android:fontWeight="400"
-        android:font="@font/ubuntu_regular"/>
+        android:font="@font/roboto_regular"/>
 
     <font
         android:fontStyle="normal"
         android:fontWeight="700"
-        android:font="@font/ubuntu_bold"/>
+        android:font="@font/roboto_bold"/>
 </font-family>

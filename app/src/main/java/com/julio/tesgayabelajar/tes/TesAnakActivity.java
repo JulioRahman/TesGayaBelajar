@@ -1,5 +1,7 @@
 package com.julio.tesgayabelajar.tes;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
@@ -214,5 +216,24 @@ public class TesAnakActivity extends AppCompatActivity {
                 jaw[noSoal-1] = 3;
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(true);
+        builder.setTitle("Tes Gaya Belajar");
+        builder.setMessage("Apakah Anda yakin akan keluar?");
+        builder.setPositiveButton("Ya", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+            }
+        }).setNeutralButton("Tidak", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {}
+        });
+
+        builder.create().show();
     }
 }

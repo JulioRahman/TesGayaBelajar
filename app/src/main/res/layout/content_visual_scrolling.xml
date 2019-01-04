@@ -14,7 +14,7 @@
         android:layout_margin="@dimen/text_margin"
         android:text="@string/text_visual"
         style="@style/Base.TextAppearance.AppCompat.Small"
-        android:fontFamily="@font/ubuntu"
+        android:fontFamily="@font/roboto"
         android:textColor="#000000"/>
 
 </android.support.v4.widget.NestedScrollView>
