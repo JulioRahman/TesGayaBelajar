@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.julio.tesgayabelajar">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -26,15 +28,17 @@
             android:name=".tes.TesSendiriActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:label="Tes"
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".tes.TesAnakActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:label="Tes"
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".tes.HasilActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".gayabelajar.VisualScrollingActivity"
             android:label="@string/title_activity_visual_scrolling"
@@ -47,7 +51,9 @@
             android:name=".gayabelajar.KinestetikScrollingActivity"
             android:label="@string/title_activity_kinestetik_scrolling"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".TentangActivity"></activity>
+        <activity
+            android:name=".tentang.TentangActivity"
+            android:theme="@style/AppTheme"/>
     </application>
 
 </manifest>

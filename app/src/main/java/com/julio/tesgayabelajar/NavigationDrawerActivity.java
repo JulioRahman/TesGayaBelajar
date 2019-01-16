@@ -1,5 +1,6 @@
 package com.julio.tesgayabelajar;
 
+import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -7,20 +8,25 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
 
 import com.julio.tesgayabelajar.gayabelajar.AudiotoriScrollingActivity;
 import com.julio.tesgayabelajar.gayabelajar.KinestetikScrollingActivity;
 import com.julio.tesgayabelajar.gayabelajar.VisualScrollingActivity;
+import com.julio.tesgayabelajar.tentang.TentangActivity;
 import com.julio.tesgayabelajar.tes.TesAnakActivity;
 import com.julio.tesgayabelajar.tes.TesSendiriActivity;
 
 public class NavigationDrawerActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, View.OnTouchListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +44,13 @@ public class NavigationDrawerActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        CardView card1 = findViewById(R.id.card1);
+        CardView card2 = findViewById(R.id.card2);
         Button mulai1 = findViewById(R.id.card1_mulai);
         Button mulai2 = findViewById(R.id.card2_mulai);
+
+        card1.setOnTouchListener(this);
+        card2.setOnTouchListener(this);
 
         mulai1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,6 +95,8 @@ public class NavigationDrawerActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent i = new Intent(NavigationDrawerActivity.this, TentangActivity.class);
+            startActivity(i);
             return true;
         }
 
@@ -112,5 +125,26 @@ public class NavigationDrawerActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                ObjectAnimator upAnim = ObjectAnimator.ofFloat(v, "translationZ", 8);
+                upAnim.setDuration(150);
+                upAnim.setInterpolator(new DecelerateInterpolator());
+                upAnim.start();
+                break;
+
+            case MotionEvent.ACTION_UP:
+            case MotionEvent.ACTION_CANCEL:
+                ObjectAnimator downAnim = ObjectAnimator.ofFloat(v, "translationZ", 0);
+                downAnim.setDuration(150);
+                downAnim.setInterpolator(new AccelerateInterpolator());
+                downAnim.start();
+                break;
+        }
+        return false;
     }
 }

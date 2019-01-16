@@ -13,12 +13,14 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.julio.tesgayabelajar.R;
 
 public class TesSendiriActivity extends AppCompatActivity {
 
+    ProgressBar pb;
     TextView iSoal, tvSoal;
     Button jaw1, jaw2, jaw3, bPrev, bNext;
     EditText edListener;
@@ -45,6 +47,7 @@ public class TesSendiriActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tes_sendiri);
 
+        pb = findViewById(R.id.progressBar);
         iSoal = findViewById(R.id.iSoal);
         tvSoal = findViewById(R.id.soal);
         jaw1 = findViewById(R.id.jaw1);
@@ -56,6 +59,7 @@ public class TesSendiriActivity extends AppCompatActivity {
         edListener.setVisibility(View.GONE);
         edListener.setText(String.valueOf(noSoal));
 
+        pb.setProgress(0);
         iSoal.setText("Soal " + noSoal);
         tvSoal.setText(soal[noSoal-1]);
         bPrev.setVisibility(View.INVISIBLE);
@@ -105,6 +109,11 @@ public class TesSendiriActivity extends AppCompatActivity {
 
                     iSoal.setText("Soal " + noSoal);
                     tvSoal.setText(soal[noSoal - 1]);
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                        pb.setProgress(noSoal - 1, true);
+                    } else {
+                        pb.setProgress(noSoal - 1);
+                    }
                 }
             }
         });

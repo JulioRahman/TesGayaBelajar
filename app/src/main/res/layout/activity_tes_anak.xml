@@ -38,7 +38,8 @@
         android:layout_marginRight="@dimen/text_margin"
         android:text="jarang sekali"
         android:textAlignment="textStart"
-        android:layout_below="@id/soalb"/>
+        android:layout_below="@id/soalb"
+        android:textAllCaps="false"/>
 
     <android.support.design.button.MaterialButton
         android:id="@+id/jaw2b"
@@ -49,7 +50,8 @@
         android:layout_marginRight="@dimen/text_margin"
         android:text="kadang-kadang"
         android:textAlignment="textStart"
-        android:layout_below="@id/jaw1b"/>
+        android:layout_below="@id/jaw1b"
+        android:textAllCaps="false"/>
 
     <android.support.design.button.MaterialButton
         android:id="@+id/jaw3b"
@@ -60,7 +62,8 @@
         android:layout_marginRight="@dimen/text_margin"
         android:text="hampir selalu"
         android:textAlignment="textStart"
-        android:layout_below="@id/jaw2b"/>
+        android:layout_below="@id/jaw2b"
+        android:textAllCaps="false"/>
 
     <android.support.design.button.MaterialButton
         android:id="@+id/bPrevb"

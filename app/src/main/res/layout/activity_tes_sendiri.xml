@@ -6,6 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".tes.TesSendiriActivity">
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="15"
+        android:progress="1"/>
+
     <TextView
         android:id="@+id/iSoal"
         style="@style/TextAppearance.AppCompat.Large"
@@ -14,7 +22,8 @@
         android:layout_margin="@dimen/text_margin"
         android:text="index soal"
         android:textColor="@color/colorPrimary"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:layout_below="@id/progressBar"/>
 
     <TextView
         android:id="@+id/soal"
@@ -25,8 +34,9 @@
         android:layout_marginRight="@dimen/text_margin"
         android:layout_marginBottom="@dimen/text_margin"
         android:text="soal"
-        android:justificationMode="inter_word"
-        android:layout_below="@id/iSoal"/>
+        android:gravity="center"
+        android:layout_below="@id/iSoal"
+        android:layout_centerHorizontal="true"/>
 
     <LinearLayout
         android:layout_width="match_parent"
